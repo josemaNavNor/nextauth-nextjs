@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";   
 import GoogleProvider from "next-auth/providers/google";
 import AzureADProvider from "next-auth/providers/azure-ad";
+import GitHubProvider from "next-auth/providers/github";
 
 const authOptions = NextAuth({
     providers: [
@@ -12,6 +13,10 @@ const authOptions = NextAuth({
             clientId: process.env.AZURE_AD_CLIENT_ID!,
             clientSecret: process.env.AZURE_AD_CLIENT_SECRET!,
             tenantId: process.env.AZURE_AD_TENANT_ID!
+        }),
+        GitHubProvider({
+            clientId: process.env.GITHUB_ID!,
+            clientSecret: process.env.GITHUB_SECRET!
         })
     ]
 });
