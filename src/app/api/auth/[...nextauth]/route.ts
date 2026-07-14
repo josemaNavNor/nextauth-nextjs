@@ -3,7 +3,7 @@ import GoogleProvider from "next-auth/providers/google";
 import AzureADProvider from "next-auth/providers/azure-ad";
 import GitHubProvider from "next-auth/providers/github";
 
-const authOptions = NextAuth({
+const handler = NextAuth({
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -22,4 +22,4 @@ const authOptions = NextAuth({
 });
 
 // Exportar las opciones de autenticacion para que puedan ser utilizadas en las rutas GET y POST del endpoint de autenticacion
-export { authOptions as GET, authOptions as POST };
+export { handler as GET, handler as POST };
