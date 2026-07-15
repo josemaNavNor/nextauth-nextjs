@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 const protectedRoutes = ["/dashboard"];
-
+// proteger las rutas que requieren autenticacion
 export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
